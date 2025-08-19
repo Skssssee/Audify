@@ -25,9 +25,9 @@ API_KEY = getenv("API_KEY", None)
 DOWNLOADS_DIR = "downloads"
 
 # Basic Bot Configs
-OWNER_USERNAME = getenv("OWNER_USERNAME", "Nikchil") #Replace With Yours ~
-BOT_USERNAME = getenv("BOT_USERNAME", "AudifyMusicBot") #Replace With Yours ~
-BOT_NAME = getenv("BOT_NAME", "Audify") #Replace With Yours ~
+OWNER_USERNAME = getenv("OWNER_USERNAME", "jasmineop") #Replace With Yours ~
+BOT_USERNAME = getenv("BOT_USERNAME", "jasmine_music_bot") #Replace With Yours ~
+BOT_NAME = getenv("BOT_NAME", "jasminexmuusic") #Replace With Yours ~
 ASSUSERNAME = getenv("ASSUSERNAME", "AudifyAssistant") #Replace With Yours ~
 LOGGER_ID = int(getenv("LOGGER_ID", "-1002723963783")) #Replace With Yours ~
 BOT_LOGS_CHANNEL = int(getenv("BOT_LOGS_CHANNEL", "-1002731989493")) #Replace With Yours ~
@@ -64,9 +64,9 @@ GIT_TOKEN = getenv(
 )  # Fill this variable if your upstream repository is private
 
 # Support
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/GrayBots")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/GrayBotSupport")
-SOURCE_CODE = getenv("SOURCE_CODE", "https://github.com/GrayBots/Audify")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/jasminemusicgc")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/jasminemusicgc")
+SOURCE_CODE = getenv("SOURCE_CODE", "https://github.com/GraysBots/Audify")
 PRIVACY_LINK = getenv("PRIVACY_LINK", "https://telegra.ph/Privacy-Policy-for-Audify-Music--Management-08-02-2")
 
 # Playlist
