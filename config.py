@@ -66,7 +66,7 @@ GIT_TOKEN = getenv(
 # Support
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/jasminemusicgc")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/jasminemusicgc")
-SOURCE_CODE = getenv("SOURCE_CODE", "https://github.com/GraysBots/Audify")
+SOURCE_CODE = getenv("SOURCE_CODE", "https://github.com/Bots/A")
 PRIVACY_LINK = getenv("PRIVACY_LINK", "https://telegra.ph/Privacy-Policy-for-Audify-Music--Management-08-02-2")
 
 # Playlist
