@@ -20,7 +20,7 @@ BOT_TOKEN = getenv("BOT_TOKEN", "")
 OWNER_ID = int(getenv("OWNER_ID", "0"))
 
 # Music API Configs
-API_BASE_URL = getenv("API_URL", "AIzaSyCX53UtfJX58fsYc-Mb_32B70C4XAHIgaw") #API Config ~
+API_BASE_URL = getenv("API_URL", "http://deadlinetech.site") #API Config ~
 API_KEY = getenv("API_KEY", None)
 DOWNLOADS_DIR = "downloads"
 
