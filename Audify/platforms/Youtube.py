@@ -38,9 +38,13 @@ def extract_video_id(link: str) -> str:
     raise ValueError("Invalid YouTube link provided.")
     
 
-
 def api_dl(video_id: str) -> str | None:
-    api_url = f"{API_BASE_URL}/download/song/{video_id}?key={API_KEY}"
+    """
+    Uses your documented API:
+      GET {API_BASE_URL}/song/{video_id}?key={API_KEY}&video=False
+    It expects JSON containing 'stream_url', then downloads that to mp3.
+    """
+    api_url = f"{API_BASE_URL}/song/{video_id}"
     file_path = os.path.join("downloads", f"{video_id}.mp3")
 
     # ✅ Check if already downloaded
@@ -49,14 +53,31 @@ def api_dl(video_id: str) -> str | None:
         return file_path
 
     try:
-        response = requests.get(api_url, stream=True, timeout=10)
+        params = {"key": API_KEY, "video": False}
+        response = requests.get(api_url, params=params, timeout=10)
 
         if response.status_code == 200:
+            # Expect JSON { "stream_url": "...", "video_id": "...", "Video": bool }
+            try:
+                data = response.json()
+            except ValueError:
+                print(f"Invalid JSON from API for {video_id}")
+                return None
+
+            stream_url = data.get("stream_url")
+            if not stream_url:
+                print(f"❌ No stream_url in API response for {video_id}")
+                return None
+
             os.makedirs("downloads", exist_ok=True)
-            with open(file_path, 'wb') as f:
-                for chunk in response.iter_content(chunk_size=8192):
-                    if chunk:
-                        f.write(chunk)
+            with requests.get(stream_url, stream=True, timeout=30) as r:
+                if r.status_code != 200:
+                    print(f"Failed to fetch stream for {video_id}. Status: {r.status_code}")
+                    return None
+                with open(file_path, 'wb') as f:
+                    for chunk in r.iter_content(chunk_size=8192):
+                        if chunk:
+                            f.write(chunk)
 
             # ✅ Check file size
             file_size = os.path.getsize(file_path)
@@ -81,9 +102,6 @@ def api_dl(video_id: str) -> str | None:
         return None
 
 
-
-
-
 def cookie_txt_file():
     folder_path = f"{os.getcwd()}/cookies"
     filename = f"{os.getcwd()}/cookies/logs.csv"
@@ -94,7 +112,6 @@ def cookie_txt_file():
     with open(filename, 'a') as file:
         file.write(f'Choosen File : {cookie_txt_file}\n')
     return f"""cookies/{str(cookie_txt_file).split("/")[-1]}"""
-
 
 
 async def check_file_size(link):
