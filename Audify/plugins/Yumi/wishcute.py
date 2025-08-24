@@ -12,7 +12,7 @@ import random
 import requests
 from Audify import app
 
-SUPPORT_CHAT = "GrayBotSupport"
+SUPPORT_CHAT = "jasminemusicgc"
 
 # Common support button
 BUTTON = [[InlineKeyboardButton("Support", url=f"https://t.me/{SUPPORT_CHAT}")]]
