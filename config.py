@@ -26,8 +26,8 @@ DOWNLOADS_DIR = "downloads"
 
 # Basic Bot Configs
 OWNER_USERNAME = getenv("OWNER_USERNAME", "Nikchil") #Replace With Yours ~
-BOT_USERNAME = getenv("BOT_USERNAME", "AudifyMusicBot") #Replace With Yours ~
-BOT_NAME = getenv("BOT_NAME", "Audify") #Replace With Yours ~
+BOT_USERNAME = getenv("BOT_USERNAME", "Jasmine_music_bot") #Replace With Yours ~
+BOT_NAME = getenv("BOT_NAME", "jasminemusicbot") #Replace With Yours ~
 ASSUSERNAME = getenv("ASSUSERNAME", "AudifyAssistant") #Replace With Yours ~
 LOGGER_ID = int(getenv("LOGGER_ID", "-1002723963783")) #Replace With Yours ~
 BOT_LOGS_CHANNEL = int(getenv("BOT_LOGS_CHANNEL", "-1002731989493")) #Replace With Yours ~
