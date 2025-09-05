@@ -64,9 +64,9 @@ GIT_TOKEN = getenv(
 )  # Fill this variable if your upstream repository is private
 
 # Support
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/GrayBots")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/GrayBotSupport")
-SOURCE_CODE = getenv("SOURCE_CODE", "https://github.com/GrayBots/Audify")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/jasminemusicgc")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/jasminemusicgc")
+SOURCE_CODE = getenv("SOURCE_CODE", "https://github.com/jasminemusicgc")
 PRIVACY_LINK = getenv("PRIVACY_LINK", "https://telegra.ph/Privacy-Policy-for-Audify-Music--Management-08-02-2")
 
 # Playlist
